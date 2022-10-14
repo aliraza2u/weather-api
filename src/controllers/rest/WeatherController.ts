@@ -42,24 +42,6 @@ export class WeatherController {
   @Inject()
   private weatherService: WeatherService;
 
-  // @Get("/api")
-  // @Returns(200, WeatherResultModel).Of(WeatherResultModel)
-  // public async getOpenWeather(@QueryParams() query: WeatherQueryParams) {
-  //   const currentWeather = await fetchWeather(query);
-  //   if (!currentWeather) throw new NotFound("Weather not found");
-  //   const { coord, main, sys, name } = currentWeather.data;
-  //   const data = {
-  //     longitude: coord.lon,
-  //     latitude: coord.lat,
-  //     temp: main.temp,
-  //     city: name,
-  //     country: sys.country,
-  //     population: "ddd",
-  //   };
-  //   await this.weatherService.createWeather(data);
-  //   return currentWeather;
-  // }
-
   @Get("/forecast")
   @Returns(200, Object).Of(Object)
   public async getForecast(@QueryParams() query: ForecastQueryParams) {
